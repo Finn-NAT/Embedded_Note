@@ -12,9 +12,14 @@ git init                                # Initialize Git repository
 
 git config --global user.email "<your-email>"
 git config --global user.name "<your-name>"
+
 # Or for only this project:
 # git config user.email "<your-email>"
 # git config user.name "<your-name>"
+
+# You can check your current user name and email in Git Project by:
+# git config user.email
+# git config user.name
 
 git add .                               # Add all files and folders
 git commit -m "Initial commit"          # Add your commit message (-m "Line 2" -m "Line 3" for multiple lines)
@@ -85,4 +90,30 @@ And if you want to clone project and submodule in GitHub, after clone like norma
 ```bash
 cd project
 git submodule update --init --recursive
+```
+
+## Basic Use of .gitignore
+```bash
+folder1/    # Ignore folder at the same level as .gitignore file
+
+folder1/folder2/.../foldern # Ignore folder at a specific path
+
+folder1/folder2/.../foldern/file.txt # Ignore file at a specific path
+
+**/folder1/  # Ignore any folder named "folder1" anywhere in the project
+
+**/*.local/  # Ignore any folder with ".local" extension anywhere in the project
+
+folder1/
+!folder1/file.txt  # Ignore everything in folder1 except file.txt
+
+```
+
+When you first ignore a folder or file, add it to .gitignore like this:
+```bash
+folder1/folder2/.../foldern/file.txt # Ignore Folder or File
+```
+If you later want to track that file or folder again, remove it from .gitignore and use:
+```bash
+git add -f folder1/folder2/.../foldern/file.txt # Force add Folder or File
 ```
