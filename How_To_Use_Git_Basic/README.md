@@ -117,3 +117,59 @@ If you later want to track that file or folder again, remove it from .gitignore 
 ```bash
 git add -f folder1/folder2/.../foldern/file.txt # Force add Folder or File
 ```
+
+## Basic Use of Git Branch
+
+Working with branches in Git allows you to develop features, fix bugs, or experiment in isolated environments. Here are the most common branch commands:
+
+```bash
+# List all local branches
+git branch
+
+# List all remote branches
+git branch -r
+
+# Create a new branch (does not switch to it)
+git branch <branch-name>
+
+# Create and switch to a new branch
+git checkout -b <branch-name>
+# or (newer versions of Git)
+git switch -c <branch-name>
+
+# Rename the current branch
+git branch -m <new-branch-name>
+
+# Rename a different branch (not currently checked out)
+git branch -m <old-branch-name> <new-branch-name>
+
+# If you already pushed the old branch to remote, delete the old branch and push the new one:
+git push origin :<old-branch-name> <new-branch-name>
+git push -u origin <new-branch-name>
+
+# Switch to an existing branch
+git checkout <branch-name>
+# or
+git switch <branch-name>
+
+# Merge another branch into your current branch
+git merge <branch-name>
+
+# Delete a local branch (must not be checked out)
+git branch -d <branch-name>
+# Force delete (if not merged)
+git branch -D <branch-name>
+
+# Push a new branch to remote and set upstream
+git push -u origin <branch-name>
+
+# Delete a remote branch
+git push origin --delete <branch-name>
+```
+
+**Typical workflow:**
+1. Create and switch to a new branch for your feature or fix.
+2. Make changes, commit them.
+3. Push the branch to remote if you want to share or back it up.
+4. When done, switch to your main branch and merge your feature branch.
+5. Delete the feature branch if no longer needed.
