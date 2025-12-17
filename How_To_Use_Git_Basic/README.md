@@ -155,10 +155,13 @@ git switch <branch-name>
 # Merge another branch into your current branch
 git merge <branch-name>
 
-# Delete a local branch (must not be checked out)
+# Delete a local branch (must not be checked out and if merged)
 git branch -d <branch-name>
 # Force delete (if not merged)
 git branch -D <branch-name>
+
+# If you want to delete brand have already pushed in remote
+git push origin --delete <branch-name>
 
 # Push a new branch to remote and set upstream
 git push -u origin <branch-name>
