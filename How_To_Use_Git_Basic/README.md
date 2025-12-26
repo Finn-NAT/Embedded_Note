@@ -170,9 +170,23 @@ git push -u origin <branch-name>
 git push origin --delete <branch-name>
 ```
 
-**Typical workflow:**
+**Typical (Basic) workflow:**
 1. Create and switch to a new branch for your feature or fix.
 2. Make changes, commit them.
 3. Push the branch to remote if you want to share or back it up.
 4. When done, switch to your main branch and merge your feature branch.
 5. Delete the feature branch if no longer needed.
+
+Example you have branch main and branch_1 you are developing (branch_1 is made form main and you haven't make new commit in main yet)
+
+You can swich to main and do something
+```bash
+git checkout main
+# if you have file or folder in project named "main", it will make error
+#   fatal: 'main' could be both a local file and a tracking branch.
+#   Please use -- (and optionally --no-guess) to disambiguate
+# use this instead git checkout main --
+
+git merge <branch_1>
+git push origin main
+```
