@@ -17,6 +17,7 @@ Count how many commits ago the target commit is from HEAD (e.g., 3 commits).
 Replace `N` with the number of commits (e.g., 3):
 ```sh
 git rebase -i HEAD~N
+# git rebase -i --root              #If you want to fix in first commit
 ```
 
 **Step 4: Mark the commit for editing**

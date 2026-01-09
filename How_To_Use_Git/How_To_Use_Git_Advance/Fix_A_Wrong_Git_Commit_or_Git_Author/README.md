@@ -39,6 +39,7 @@ Below are the steps to fix a wrong git commit or author in a previous commit (no
 1. **Start an interactive rebase:**
 ```bash
 git rebase -i HEAD~N
+# git rebase -i --root              #If you want to fix in first commit
 ```
 > Replace `N` with the number of commits you want to go back. This command opens an editor to let you choose which commits to edit.
 
