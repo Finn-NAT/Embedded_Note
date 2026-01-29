@@ -23,6 +23,22 @@ git rebase -i HEAD~N
 **Step 4: Mark the commit for editing**
 In the editor, find the line with "Fix hanging modbus serial" and change `pick` to `edit`. Save and close the editor.
 
+**If using Vim editor:**
+You'll see a file like `git-rebase-todo` (shown at the bottom as something like `1,4 Top` and `32L, 1524B`).
+
+To change `pick` to `edit`:
+1. Press `i` (enter Insert mode)
+2. Use arrow keys to navigate to the word `pick` and change it to `edit` (or just `e`)
+3. Press `Esc` (exit Insert mode)
+4. Type `:wq` and press `Enter` (save and quit)
+
+Then continue with the rebase process in your terminal.
+
+**To abort the rebase if needed:**
+```sh
+git rebase --abort
+```
+
 **Step 5: Apply your changes**
 Retrieve your stashed changes:
 ```sh
